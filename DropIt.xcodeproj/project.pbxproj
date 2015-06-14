@@ -8,11 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		28C61AD41B2B632B00D7BB46 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C61AD31B2B632B00D7BB46 /* AppDelegate.swift */; };
-		28C61AD61B2B632B00D7BB46 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C61AD51B2B632B00D7BB46 /* ViewController.swift */; };
 		28C61AD91B2B632B00D7BB46 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28C61AD71B2B632B00D7BB46 /* Main.storyboard */; };
 		28C61ADB1B2B632B00D7BB46 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28C61ADA1B2B632B00D7BB46 /* Images.xcassets */; };
 		28C61ADE1B2B632B00D7BB46 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28C61ADC1B2B632B00D7BB46 /* LaunchScreen.xib */; };
 		28C61AEA1B2B632C00D7BB46 /* DropItTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C61AE91B2B632C00D7BB46 /* DropItTests.swift */; };
+		28C61AF41B2B64BF00D7BB46 /* DropItViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C61AF31B2B64BF00D7BB46 /* DropItViewController.swift */; };
+		28E1391B1B2B721200993468 /* DropitDynamicBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E1391A1B2B721200993468 /* DropitDynamicBehavior.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,13 +30,14 @@
 		28C61ACE1B2B632B00D7BB46 /* DropIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DropIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28C61AD21B2B632B00D7BB46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		28C61AD31B2B632B00D7BB46 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		28C61AD51B2B632B00D7BB46 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		28C61AD81B2B632B00D7BB46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		28C61ADA1B2B632B00D7BB46 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		28C61ADD1B2B632B00D7BB46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		28C61AE31B2B632C00D7BB46 /* DropItTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DropItTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		28C61AE81B2B632C00D7BB46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		28C61AE91B2B632C00D7BB46 /* DropItTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropItTests.swift; sourceTree = "<group>"; };
+		28C61AF31B2B64BF00D7BB46 /* DropItViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropItViewController.swift; sourceTree = "<group>"; };
+		28E1391A1B2B721200993468 /* DropitDynamicBehavior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropitDynamicBehavior.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,8 +79,9 @@
 		28C61AD01B2B632B00D7BB46 /* DropIt */ = {
 			isa = PBXGroup;
 			children = (
+				28C61AF31B2B64BF00D7BB46 /* DropItViewController.swift */,
+				28E1391A1B2B721200993468 /* DropitDynamicBehavior.swift */,
 				28C61AD31B2B632B00D7BB46 /* AppDelegate.swift */,
-				28C61AD51B2B632B00D7BB46 /* ViewController.swift */,
 				28C61AD71B2B632B00D7BB46 /* Main.storyboard */,
 				28C61ADA1B2B632B00D7BB46 /* Images.xcassets */,
 				28C61ADC1B2B632B00D7BB46 /* LaunchScreen.xib */,
@@ -212,8 +215,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28C61AD61B2B632B00D7BB46 /* ViewController.swift in Sources */,
+				28C61AF41B2B64BF00D7BB46 /* DropItViewController.swift in Sources */,
 				28C61AD41B2B632B00D7BB46 /* AppDelegate.swift in Sources */,
+				28E1391B1B2B721200993468 /* DropitDynamicBehavior.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,6 +415,7 @@
 				28C61AEF1B2B632C00D7BB46 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		28C61AF01B2B632C00D7BB46 /* Build configuration list for PBXNativeTarget "DropItTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +424,7 @@
 				28C61AF21B2B632C00D7BB46 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
