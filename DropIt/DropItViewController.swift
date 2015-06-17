@@ -10,7 +10,17 @@ import UIKit
 
 class DropItViewController: UIViewController, UIDynamicAnimatorDelegate {
 
+    struct PathNames {
+        static let MiddleBarrier = "Middle Barrier"
+    }
+
+
     @IBOutlet weak var gameView: UIView!
+    
+    
+    @IBAction func drop(sender: UITapGestureRecognizer) {
+        drop()
+    }
     
     lazy var animator: UIDynamicAnimator = {
         let lazyCreatedDA = UIDynamicAnimator(referenceView: self.gameView)
@@ -83,7 +93,8 @@ class DropItViewController: UIViewController, UIDynamicAnimatorDelegate {
         let barrierSize = dropSize
         let barrierOrigin = CGPoint(x: gameView.bounds.midX - barrierSize.width / 2, y: gameView.bounds.midY - barrierSize.height / 2)
         let path = UIBezierPath(ovalInRect: CGRect(origin: barrierOrigin, size: barrierSize))
-        dropItBehavior.addBarrier(path, named: "Middle Barrier")
+        dropItBehavior.addBarrier(path, named: PathNames.MiddleBarrier)
+        //gameView.setPath(path, named: PathNames.MiddleBarrier)
     }
     
     // MARK UIDynamicAnimator delegate methods
