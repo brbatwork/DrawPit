@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		285EA6811B343D9C00B9029F /* BezierPathsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285EA6801B343D9C00B9029F /* BezierPathsView.swift */; };
 		28C61AD41B2B632B00D7BB46 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C61AD31B2B632B00D7BB46 /* AppDelegate.swift */; };
 		28C61AD91B2B632B00D7BB46 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28C61AD71B2B632B00D7BB46 /* Main.storyboard */; };
 		28C61ADB1B2B632B00D7BB46 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28C61ADA1B2B632B00D7BB46 /* Images.xcassets */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		285EA6801B343D9C00B9029F /* BezierPathsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BezierPathsView.swift; sourceTree = "<group>"; };
 		28C61ACE1B2B632B00D7BB46 /* DropIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DropIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28C61AD21B2B632B00D7BB46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		28C61AD31B2B632B00D7BB46 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				28C61AF31B2B64BF00D7BB46 /* DropItViewController.swift */,
+				285EA6801B343D9C00B9029F /* BezierPathsView.swift */,
 				28E1391A1B2B721200993468 /* DropitDynamicBehavior.swift */,
 				28C61AD31B2B632B00D7BB46 /* AppDelegate.swift */,
 				28C61AD71B2B632B00D7BB46 /* Main.storyboard */,
@@ -215,6 +218,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				285EA6811B343D9C00B9029F /* BezierPathsView.swift in Sources */,
 				28C61AF41B2B64BF00D7BB46 /* DropItViewController.swift in Sources */,
 				28C61AD41B2B632B00D7BB46 /* AppDelegate.swift in Sources */,
 				28E1391B1B2B721200993468 /* DropitDynamicBehavior.swift in Sources */,
