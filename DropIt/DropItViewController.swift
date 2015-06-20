@@ -12,14 +12,60 @@ class DropItViewController: UIViewController, UIDynamicAnimatorDelegate {
 
     struct PathNames {
         static let MiddleBarrier = "Middle Barrier"
+        static let AttachmentPath = "Attach Path"
     }
 
+    var dropsPerRow = 10
+    
+    let dropItBehavior = DropitDynamicBehavior()
+    
+    var lastDroppedView: UIView?
+    
+    var attachment: UIAttachmentBehavior? {
+        willSet {
+            let path = UIBezierPath()
+            gameView.setPath(path, named: PathNames.AttachmentPath)
+            animator.removeBehavior(attachment)
+        }
+        didSet {
+            if attachment != nil {
+                animator.addBehavior(attachment)
+                
+                attachment?.action = { [unowned self] in
+                    if let attachedView = self.attachment?.items.first as? UIView {
+                        let path = UIBezierPath()
+                        path.moveToPoint(self.attachment!.anchorPoint)
+                        path.addLineToPoint(attachedView.center)
+                        self.gameView.setPath(path, named: PathNames.AttachmentPath)
+                    }
+                }
+            }
+        }
+    }
 
     @IBOutlet weak var gameView: BezierPathsView!
     
-    
     @IBAction func drop(sender: UITapGestureRecognizer) {
         drop()
+    }
+    
+    @IBAction func grabDrop(sender: UIPanGestureRecognizer) {
+        let gesturePoint = sender.locationInView(gameView)
+        
+        switch sender.state {
+        case .Began:
+            if let viewToAttach = lastDroppedView {
+                attachment = UIAttachmentBehavior(item: viewToAttach, attachedToAnchor: gesturePoint)
+                lastDroppedView = nil
+            }
+            
+        case .Changed:
+            attachment?.anchorPoint = gesturePoint
+        case .Ended:
+            attachment = nil
+        default:
+            attachment = nil
+        }
     }
     
     lazy var animator: UIDynamicAnimator = {
@@ -28,9 +74,7 @@ class DropItViewController: UIViewController, UIDynamicAnimatorDelegate {
         return lazyCreatedDA
         }()
     
-    var dropsPerRow = 10
-    
-    let dropItBehavior = DropitDynamicBehavior()
+
     
     var dropSize: CGSize {
         let size = gameView.bounds.size.width / CGFloat(dropsPerRow)
@@ -46,6 +90,7 @@ class DropItViewController: UIViewController, UIDynamicAnimatorDelegate {
         frame.origin.x = CGFloat.random(dropsPerRow) * dropSize.width
         
         let dropView = UIView(frame: frame)
+        lastDroppedView = dropView
         dropView.backgroundColor = UIColor.random
         dropItBehavior.addDrop(dropView)
     }

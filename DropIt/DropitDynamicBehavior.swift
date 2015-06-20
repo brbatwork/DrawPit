@@ -22,7 +22,9 @@ class DropitDynamicBehavior: UIDynamicBehavior {
         let lazyCreatedCollider = UICollisionBehavior()
         lazyCreatedCollider.translatesReferenceBoundsIntoBoundary = true
         return lazyCreatedCollider
-        }()
+    }()
+    
+
     
     override init() {
         super.init()
